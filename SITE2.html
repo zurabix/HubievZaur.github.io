@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Задание №2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ШАПКА: фон тянется на всю ширину окна -->
+    <header id="header">
+
+        <!-- содержимое шапки ограничено 960px и выровнено по центру -->
+        <div class="header-in clearfix">
+
+            <!-- МЕНЮ -->
+            <nav class="menu">
+                <ul>
+                    <li><a href="#links">Список ссылок</a></li>
+                    <li><a href="#table">Таблица</a></li>
+                    <li><a href="#form">Форма</a></li>
+                </ul>
+            </nav>
+
+            <!-- ЛОГОТИП: круглая фотография, обрезается через CSS -->
+            <img
+                class="logo"
+                src="https://sun1-26.userapi.com/s/v1/ig2/hKkKFJxgA8vko0Gbs8Heo4DjSVMS3gTIRdzKucNhwGrKlXS4Cxjt_Jau8OLShp_tNYBsgwmKn7gC4zat4wGH_ZxU.jpg?quality=95&amp;crop=0,0,2160,2160&amp;as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440&amp;ava=1"
+                alt="Логотип сайта"
+                width="100"
+                height="100">
+
+            <!-- НАЗВАНИЕ САЙТА -->
+            <span class="namesite">Навигатор ФКТиПМ</span>
+
+        </div>
+
+    </header>
+
+
+    <!-- СОДЕРЖИМОЕ: максимальная ширина 960px, выравнивание по центру -->
+    <main id="content" class="content">
+
+        <h1 id="links">Список ссылок</h1>
+
+        <ul>
+
+            <li>
+                1.
+                <a href="http://kubsu.ru/">
+                    Сайт КубГУ через HTTP
+                </a>
+            </li>
+
+            <li>
+                2.
+                <a href="https://kubsu.ru/">
+                    Сайт КубГУ через HTTPS
+                </a>
+            </li>
+
+            <li>
+                3. Ссылка-изображение
+                <br><br>
+
+                <a href="https://kubsu.ru/">
+                    <img
+                        src="https://avatars.mds.yandex.net/i?id=6b979f92dd78ffd138ee5ced5fed6c6b_sr-5108022-images-thumbs&amp;n=13"
+                        alt="КубГУ"
+                        width="200">
+                </a>
+            </li>
+
+            <li>
+                4.
+                <a href="/news">
+                    Внутренняя страница сайта
+                </a>
+            </li>
+
+            <li>
+                5.
+                <a href="/">
+                    Главная страница
+                </a>
+            </li>
+
+            <li>
+                6.
+                <a href="#form">
+                    Перейти к форме
+                </a>
+            </li>
+
+            <li>
+                7.
+                <a href="?student=Ivan&amp;course=2&amp;group=21">
+                    Ссылка с тремя параметрами
+                </a>
+            </li>
+
+            <li>
+                8.
+                <a href="?id=25">
+                    Ссылка с параметром id
+                </a>
+            </li>
+
+            <li>
+                9.
+                <a href="./index.html">
+                    Страница в текущем каталоге
+                </a>
+            </li>
+
+            <li>
+                10.
+                <a href="about/index.html">
+                    Страница в каталоге about
+                </a>
+            </li>
+
+            <li>
+                11.
+                <a href="../index.html">
+                    Страница на один каталог выше
+                </a>
+            </li>
+
+            <li>
+                12.
+                <a href="../../index.html">
+                    Страница на два каталога выше
+                </a>
+            </li>
+
+            <li>
+                13.
+                Я учусь в
+                <a href="https://kubsu.ru/">
+                    Кубанском государственном университете
+                </a>
+                и изучаю веб-разработку.
+            </li>
+
+            <li>
+                14.
+                <a href="https://ru.wikipedia.org/wiki/HTML#%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F">
+                    Ссылка на раздел страницы Wikipedia
+                </a>
+            </li>
+
+            <li>
+                15. Картинка с кликабельными областями
+                <br><br>
+
+                <img
+                    src="https://static.rustore.ru/imgproxy/fVJFoCjFM91NxuMbSYrniZr8FTRr-WHRWYA3afXU96E/preset:vk_og_img/plain/https://static.rustore.ru/2026/3/27/9f/apk/2063698698/content/ICON/4b594364-e4c9-4822-a06a-606f8a86ffc4.png@webp"
+                    usemap="#university-map"
+                    alt="Картинка с областями"
+                    width="400"
+                    height="200">
+
+                <map name="university-map">
+
+                    <area
+                        shape="rect"
+                        coords="0,0,200,200"
+                        href="https://kubsu.ru/"
+                        alt="КубГУ"
+                        title="Перейти на сайт КубГУ">
+
+                    <area
+                        shape="circle"
+                        coords="300,100,70"
+                        href="https://www.google.com/"
+                        alt="Google"
+                        title="Перейти на Google">
+
+                </map>
+
+                <p>
+                    Левая часть картинки ведёт на КубГУ,
+                    круглая область справа — на Google.
+                </p>
+            </li>
+
+            <li>
+                16.
+                <a href="">
+                    Ссылка с пустым href
+                </a>
+            </li>
+
+            <li>
+                17.
+                <a>
+                    Ссылка без атрибута href
+                </a>
+            </li>
+
+            <li>
+                18.
+                <a href="https://kubsu.ru/" rel="nofollow">
+                    Ссылка с запретом перехода для поискового робота
+                </a>
+            </li>
+
+            <li>
+                19.
+
+                <!--noindex-->
+                <a href="https://kubsu.ru/">
+                    Ссылка, запрещённая для индексации
+                </a>
+                <!--/noindex-->
+
+            </li>
+
+            <li>
+                20. Нумерованный список ссылок с title
+
+                <ol>
+
+                    <li>
+                        <a href="https://kubsu.ru/"
+                           title="Главная страница КубГУ">
+                            КубГУ
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://kubsu.ru/ru/fktipm"
+                           title="Факультет компьютерных технологий">
+                            ФКТиПМ
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://kubsu.ru/ru/education"
+                           title="Образование в КубГУ">
+                            Образование
+                        </a>
+                    </li>
+
+                </ol>
+            </li>
+
+            <li>
+                21.
+                <a href="ftp://student:12345@example.com/file.txt">
+                    Файл на FTP-сервере с авторизацией
+                </a>
+            </li>
+
+        </ul>
+
+
+        <h1 id="table">Таблица</h1>
+
+        <table class="table">
+
+            <thead>
+                <!-- заголовок таблицы, объединённый на все пять колонок -->
+                <tr>
+                    <th colspan="5" class="table-head">
+                        Языки программирования, изучаемые на факультете
+                    </th>
+                </tr>
+
+                <!-- строка-заголовок с названиями колонок,
+                     использует объединение по вертикали и по горизонтали -->
+                <tr class="table-cols">
+                    <th scope="col" rowspan="2">Язык</th>
+                    <th scope="col" rowspan="2">Год</th>
+                    <th scope="col" colspan="2">Характеристики</th>
+                    <th scope="col" rowspan="2">Область применения</th>
+                </tr>
+                <tr class="table-cols">
+                    <th scope="col">Парадигма</th>
+                    <th scope="col">Типизация</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Pascal</td>
+                    <td>1970</td>
+                    <td>Процедурная</td>
+                    <td>Статическая строгая</td>
+                    <td>Обучение программированию</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>1972</td>
+                    <td>Процедурная</td>
+                    <td>Статическая слабая</td>
+                    <td>Системное ПО, ядра ОС</td>
+                </tr>
+                <tr>
+                    <td>C++</td>
+                    <td>1985</td>
+                    <td>Мультипарадигменная</td>
+                    <td>Статическая</td>
+                    <td>Игры, высоконагруженные сервисы</td>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td>1995</td>
+                    <td>Объектно-ориентированная</td>
+                    <td>Статическая строгая</td>
+                    <td>Корпоративные системы, Android</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>1995</td>
+                    <td>Мультипарадигменная</td>
+                    <td>Динамическая слабая</td>
+                    <td>Веб-интерфейсы</td>
+                </tr>
+                <tr>
+                    <td>PHP</td>
+                    <td>1995</td>
+                    <td>Мультипарадигменная</td>
+                    <td>Динамическая слабая</td>
+                    <td>Серверная часть сайтов</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>1991</td>
+                    <td>Мультипарадигменная</td>
+                    <td>Динамическая строгая</td>
+                    <td>Анализ данных, машинное обучение</td>
+                </tr>
+                <tr>
+                    <td>Haskell</td>
+                    <td>1990</td>
+                    <td>Функциональная</td>
+                    <td>Статическая строгая</td>
+                    <td>Научные и финансовые расчёты</td>
+                </tr>
+                <tr>
+                    <td>Prolog</td>
+                    <td>1972</td>
+                    <td>Логическая</td>
+                    <td>Динамическая</td>
+                    <td>Искусственный интеллект</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <!-- ячейка, объединённая на все пять колонок -->
+                    <td colspan="5" class="table-total">
+                        Всего в таблице: 9 языков программирования
+                    </td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+
+        <h1 id="form">Форма</h1>
+
+        <form action="/" method="post">
+
+            <label>
+                ФИО:
+                <br>
+                <input
+                    type="text"
+                    name="fio"
+                    placeholder="Введите ФИО">
+            </label>
+
+            <br><br>
+
+
+            <label>
+                Телефон:
+                <br>
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="+7 999 123-67-67">
+            </label>
+
+            <br><br>
+
+
+            <label>
+                E-mail:
+                <br>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="example@mail.ru">
+            </label>
+
+            <br><br>
+
+
+            <label>
+                Дата рождения:
+                <br>
+                <input
+                    type="date"
+                    name="birthday">
+            </label>
+
+            <br><br>
+
+
+            Пол:
+            <br>
+
+            <label>
+                <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    checked>
+                Мужской
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="gender"
+                    value="female">
+                Женский
+            </label>
+
+            <br><br>
+
+
+            <label>
+                Любимый язык программирования:
+                <br>
+
+                <select name="languages[]" multiple>
+
+                    <option value="Pascal">Pascal</option>
+
+                    <option value="C">C</option>
+
+                    <option value="C++">C++</option>
+
+                    <option value="JavaScript">JavaScript</option>
+
+                    <option value="PHP">PHP</option>
+
+                    <option value="Python">Python</option>
+
+                    <option value="Java">Java</option>
+
+                    <option value="Haskell">Haskell</option>
+
+                    <option value="Clojure">Clojure</option>
+
+                    <option value="Prolog">Prolog</option>
+
+                    <option value="Scala">Scala</option>
+
+                </select>
+            </label>
+
+            <br><br>
+
+
+            <label>
+                Биография:
+                <br>
+
+                <textarea
+                    name="biography"
+                    rows="5"
+                    cols="40"
+                    placeholder="Расскажите немного о себе"></textarea>
+            </label>
+
+            <br><br>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    name="contract"
+                    checked>
+
+                С контрактом ознакомлен(а)
+            </label>
+
+            <br><br>
+
+
+            <input type="submit" value="Сохранить">
+
+        </form>
+
+    </main>
+
+
+    <!-- ПОДВАЛ: фон тянется на всю ширину окна -->
+    <footer id="footer">
+        <div class="footer-in">
+            <p>(c) Хубиев Заур, ФКТиПМ КубГУ</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
