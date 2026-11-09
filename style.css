@@ -1,4 +1,7 @@
-{
+/* =========================================================
+   Базовые сбросы
+   ========================================================= */
+* {
     box-sizing: border-box;
 }
 
@@ -13,8 +16,20 @@ body {
     color: #252525;
     background: #f4f5f7;
 }
-#header {
+
+/* =========================================================
+   MOBILE FIRST — правила для смартфонов (портретный режим)
+   ========================================================= */
+
+/* Шапка, контент и футер занимают 100% ширины */
+#header,
+#content,
+#footer {
     width: 100%;
+}
+
+/* ---------- Шапка ---------- */
+#header {
     background: #9b111e;
     border-bottom: 1px solid #30343a;
     position: sticky;
@@ -23,40 +38,42 @@ body {
 }
 
 .header-in {
-    max-width: 960px;
-    min-height: 86px;
-    margin: 0 auto;
-    padding: 10px 20px;
+    width: 100%;
+    min-height: auto;
+    padding: 12px 16px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 22px;
+    gap: 12px;
 }
 
-
-
+/* Логотип */
 .logo {
-    width: 64px;
-    height: 64px;
-    flex: 0 0 64px;
+    order: 1;
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #ffffff;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
+
+/* Название сайта */
 .namesite {
     order: 2;
     color: #ffffff;
-    font-size: 22px;
+    font-size: 19px;
     font-weight: 700;
     letter-spacing: 0.2px;
-    white-space: nowrap;
+    text-align: center;
 }
 
-
-
+/* ---------- Меню на смартфоне: вертикальный список ---------- */
 .menu {
     order: 3;
-    margin-left: auto;
+    width: 100%;
+    margin-left: 0;
 }
 
 .menu ul {
@@ -64,12 +81,14 @@ body {
     padding: 0;
     list-style: none;
     display: flex;
-    align-items: center;
-    gap: 6px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
 }
 
 .menu li {
     margin: 0;
+    width: 100%;
 }
 
 .menu a {
@@ -77,8 +96,9 @@ body {
     padding: 9px 12px;
     color: #d8dce1;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     border-radius: 7px;
+    background: rgba(0, 0, 0, 0.12);
     transition:
         background-color 0.2s ease,
         color 0.2s ease;
@@ -94,19 +114,17 @@ body {
     background: #3a414a;
 }
 
-
-
+/* ---------- Контент ---------- */
 .content {
-    max-width: 960px;
-    margin: 34px auto;
-    padding: 0 20px 50px;
+    margin: 24px auto;
+    padding: 0 14px 40px;
 }
 
 .content h1 {
-    margin: 42px 0 18px;
+    margin: 36px 0 16px;
     padding-bottom: 8px;
     color: #17191c;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1.25;
     border-bottom: 2px solid #d9dde2;
     scroll-margin-top: 110px;
@@ -114,22 +132,6 @@ body {
 
 .content h1:first-child {
     margin-top: 0;
-}
-
-
-
-.content > ul {
-    margin: 0;
-    padding: 26px 30px;
-    background: #ffffff;
-    border: 1px solid #e1e4e8;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(20, 25, 30, 0.06);
-}
-
-.content > ul > li {
-    margin: 12px 0;
-    padding-left: 2px;
 }
 
 .content a {
@@ -149,12 +151,57 @@ body {
     height: auto;
 }
 
-/* Картинка из пункта 3 */
-.content > ul > li img {
+.content > ul > li img,
+.links-list > li img {
     border-radius: 8px;
 }
 
+/* =========================================================
+   FLEX-ОБЁРТКА КОНТЕНТА
+   На смартфоне таблица визуально выше списка ссылок
+   (в HTML список идёт первым)
+   ========================================================= */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
 
+/* Порядок элементов на смартфоне:
+   1. Заголовок «Таблица»
+   2. Таблица
+   3. Заголовок «Список ссылок»
+   4. Список ссылок
+   5. Заголовок «Форма»
+   6. Форма
+*/
+.table-title   { order: 1; }
+.table-wrapper { order: 2; }
+.links-title   { order: 3; }
+.links-list    { order: 4; }
+.form-title    { order: 5; }
+.form-wrapper  { order: 6; }
+
+/* ---------- Список ссылок ---------- */
+.links-list {
+    margin: 0;
+    padding: 20px 24px;
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(20, 25, 30, 0.06);
+    list-style-position: inside;
+}
+
+.links-list > li {
+    margin: 12px 0;
+    padding-left: 2px;
+}
+
+/* ---------- Таблица ---------- */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
 
 .table {
     width: 100%;
@@ -204,12 +251,16 @@ body {
     text-align: center !important;
 }
 
-
+/* ---------- Форма ---------- */
+.form-wrapper {
+    width: 100%;
+}
 
 form {
+    width: 100%;
     max-width: 620px;
     margin: 0;
-    padding: 26px;
+    padding: 20px;
     background: #ffffff;
     border: 1px solid #e1e4e8;
     border-radius: 12px;
@@ -288,17 +339,14 @@ input[type="submit"]:active {
     transform: translateY(1px);
 }
 
-
-
+/* ---------- Футер ---------- */
 #footer {
-    width: 100%;
     background: #9b111e;
     color: #bfc4ca;
 }
 
 .footer-in {
-    max-width: 960px;
-    margin: 0 auto;
+    width: 100%;
     padding: 20px;
     text-align: center;
     font-size: 14px;
@@ -308,88 +356,94 @@ input[type="submit"]:active {
     margin: 0;
 }
 
+/* =========================================================
+   ПЛАНШЕТЫ И ДЕСКТОПЫ (min-width — Mobile First)
+   ========================================================= */
+@media screen and (min-width: 760px) {
 
+    /* Ограничение ширины и центрирование */
+    .header-in,
+    .content,
+    .footer-in {
+        max-width: 960px;
+        margin: 0 auto;
+    }
 
-@media (max-width: 760px) {
     .header-in {
-        min-height: auto;
-        padding: 12px 16px;
-        flex-wrap: wrap;
+        min-height: 86px;
+        padding: 10px 20px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 22px;
     }
 
     .logo {
-        width: 54px;
-        height: 54px;
-        flex-basis: 54px;
+        width: 64px;
+        height: 64px;
+        flex: 0 0 64px;
     }
 
     .namesite {
-        font-size: 19px;
-    }
-
-    .menu {
-        order: 4;
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .menu ul {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .menu a {
-        padding: 7px 10px;
-    }
-
-    .content {
-        margin-top: 24px;
-        padding-left: 14px;
-        padding-right: 14px;
-    }
-
-    .content h1 {
-        font-size: 24px;
-    }
-
-    .table {
-        display: block;
-        overflow-x: auto;
+        font-size: 22px;
+        text-align: left;
         white-space: nowrap;
     }
 
-    form {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 430px) {
-    .header-in {
-        justify-content: center;
-    }
-
-    .namesite {
-        font-size: 17px;
+    /* Меню — горизонтальное */
+    .menu {
+        order: 3;
+        width: auto;
+        margin-left: auto;
     }
 
     .menu ul {
-        gap: 2px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .menu li {
+        width: auto;
     }
 
     .menu a {
-        font-size: 13px;
-        padding: 6px 8px;
+        font-size: 14px;
+        padding: 9px 12px;
+        background: transparent;
     }
 
-    .content > ul {
-        padding: 20px 24px;
+    .content {
+        margin: 34px auto;
+        padding: 0 20px 50px;
     }
-}
 
+    .content h1 {
+        margin: 42px 0 18px;
+        font-size: 28px;
+    }
 
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+    .links-list {
+        padding: 26px 30px;
+    }
+
+    form {
+        padding: 26px;
+    }
+
+    /* На планшете/десктопе порядок обычный:
+       список ссылок → таблица → форма */
+    .links-title   { order: 1; }
+    .links-list    { order: 2; }
+    .table-title   { order: 3; }
+    .table-wrapper { order: 4; }
+    .form-title    { order: 5; }
+    .form-wrapper  { order: 6; }
+
+    /* Таблица не растягивается на весь экран на десктопе
+       (опционально можно убрать, если нужна ширина 100%) */
+    .table-wrapper {
+        overflow-x: auto;
+    }
 }
